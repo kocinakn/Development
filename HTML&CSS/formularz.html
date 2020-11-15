@@ -3,10 +3,45 @@
   </head>
   <body>
     <form action="https://jakaswitryna.com/login.php">
-	  <p> Nazwa użytkownika: <input type='text' name='username' size='15' maxlength='30' /> 
-	  <p> Hasło: <input type='password' name='password' size='15' maxlength='30' /> 
-	  <p> <textarea name='comments' cols='30' rows='4' /> Wpisz komentarz: </textarea>
+	  <p> Nazwa użytkownika: <input type='text' name='username' size='15' maxlength='30' /> </p>
+	  <p> Hasło: <input type='password' name='password' size='15' maxlength='30' /> </p>
+	  <p> <textarea name='comments' cols='30' rows='4' /> Wpisz komentarz: </textarea></p>
+	  <p> Wybierz swój ulubiony rodzaj muzyki:
+	    <br />
+		  <input type='radio' name='genre' value='pop' checked='checked'/> Pop
+		  <input type='radio' name='genre' value='rock'/> Rock
+		  <input type='radio' name='genre' value='metal'/> Metal
 	  </p>
+	  <p> Wybierz zainteresowania:
+	    <br />
+		  <input type='checkbox' name='interests' value='gym' checked='checked'/> Silownia <br />
+		  <input type='checkbox' name='interests' value='martial arts'/> Sztuki walki <br />
+		  <input type='checkbox' name='interests' value='programming'/> Programowanie <br />
+		  <input type='checkbox' name='interests' value='books' checked='checked'/> Ksiazki <br />
+		  <input type='checkbox' name='interests' value='movies'/> Filmy <br />
+		  <input type='checkbox' name='interests' value='running'/> Bieganie <br />
+		  <input type='checkbox' name='interests' value='traveling' checked='checked'/> Podrozowanie <br />
+		  <input type='checkbox' name='interests' value='cooking'/> Gotowanie <br />
+		  <input type='checkbox' name='interests' value='biking'/> Rower <br />
+	  </p>
+	  <p> Wybierz z listy Twoją ulubioną markę samochodów:
+	    <br />
+		<select name='car'>
+		  <option value='bmw'> BMW </option>
+		  <option value='fiat'> Fiat </option>
+		  <option value='honda'> Honda </option>
+		  <option value='mitsubishi'> Mitsubishi </option>
+		  <option value='audi'> Audi </option>
+		</select> </p>
+	  <p> Wybierz z listy języki programowania w Twoim kręgu zainteresowań: (zaznacz z nacisnietym ctrl)
+	    <br />
+		<select name='lang' size='5' multiple='multiple'>
+		  <option value='js' selected='selected'> JavaScript </option>
+		  <option value='java' selected='selected'> Java </option>
+		  <option value='python'> Python </option>
+		  <option value='sql'> SQL </option>
+		  <option value='c'> C </option>
+		</select> </p>
   </form>
   </body>
 </html>
