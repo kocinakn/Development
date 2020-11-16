@@ -18,4 +18,4 @@ def get_cx_prices(cx: list):
 
 if __name__ == '__main__':
     cx = ['BTC', 'ETH', 'LTC', 'ADA', 'XRP', 'BCH']
-    df = get_cx_prices(cx)
+    get_cx_prices(cx)
