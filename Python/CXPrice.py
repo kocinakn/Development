@@ -15,6 +15,13 @@ def get_cx_prices(cx: list):
     print(t)
     print(fr.reset_index(drop=True))
 
+def prepare_data(d):
+    for k, v in d.items():
+        v['mid_price'] = (v.ask0 + v.bid0)/2
+        v['spread'] = v.ask0 - v.bid0
+        v['rolling_mean_spread'] = v.spread.rolling('5s').mean()
+    return d
+
 
 if __name__ == '__main__':
     cx = ['BTC', 'ETH', 'LTC', 'ADA', 'XRP', 'BCH']
