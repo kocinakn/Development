@@ -8,12 +8,16 @@ def get_cx_prices(cx: list):
         url = f'https://api.binance.com/api/v3/ticker/price?symbol={crypto}USDT'
         data = pd.read_json(url, 'index')
         df = data.T
-        if fr is None:
-            fr = df
-        else:
-            fr = fr.append(df)
-    print(t)
-    print(fr.reset_index(drop=True))
+        fr = final_df(fr, df)
+    print(f'Performace: {datetime.now() - t}')
+    return fr.reset_index(drop=True)
+
+def final_df(fr, df):
+    if fr is None:
+        fr = df
+    else:
+        fr = fr.append(df)
+    return fr
 
 def prepare_data(d):
     for k, v in d.items():
@@ -24,5 +28,6 @@ def prepare_data(d):
 
 
 if __name__ == '__main__':
-    cx = ['BTC', 'ETH', 'LTC', 'ADA', 'XRP', 'BCH']
-    get_cx_prices(cx)
+    cx = ['BTC', 'ETH', 'LTC', 'XRP', 'ADA', 'LINK', 'ETC', 'XTZ', 'TRX']
+    df = get_cx_prices(cx)
+    print(df)
