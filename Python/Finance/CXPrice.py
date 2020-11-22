@@ -9,7 +9,7 @@ def get_cx_prices(cx: list):
         data = pd.read_json(url, 'index')
         df = data.T
         fr = final_df(fr, df)
-    print(f'Performace: {datetime.now() - t}')
+    print(f'Performance: {datetime.now() - t}')
     return fr.reset_index(drop=True)
 
 def final_df(fr, df):
